@@ -1,0 +1,15 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print a welcome message
+      run: echo "Hello, CI/CD!"
