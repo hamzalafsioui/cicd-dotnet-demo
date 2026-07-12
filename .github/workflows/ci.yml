@@ -11,5 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    # - name: Print a welcome message
+    #   run: echo "Hello, CI/CD!"
+    
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      
     - name: Print a welcome message
-      run: echo "Hello, CI/CD!"
+      run: echo "Code has been downloaded!"
