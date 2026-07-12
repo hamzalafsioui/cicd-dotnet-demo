@@ -22,7 +22,10 @@ jobs:
       with: 
         dotnet-version: '8.0.x'
     
-    - name: print dotnet version 
-      run: dotnet --version
+    # - name: print dotnet version 
+    #   run: dotnet --version
+
+    - name: Restore Dependencies
+      run: dotnet restore
       
     
