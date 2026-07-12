@@ -20,7 +20,7 @@ jobs:
     - name: setup .NET SDK
       uses: actions/setup-dotnet@v4
       with: 
-        dotnet-version: '8.0.x'
+        dotnet-version: '10.0.x'
     
     # - name: print dotnet version 
     #   run: dotnet --version
