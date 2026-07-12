@@ -13,9 +13,16 @@ jobs:
     steps:
     # - name: Print a welcome message
     #   run: echo "Hello, CI/CD!"
-    
+
     - name: Checkout Code
       uses: actions/checkout@v4
+
+    - name: setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with: 
+        dotnet-version: '8.0.x'
+    
+    - name: print dotnet version 
+      run: dotnet --version
       
-    - name: Print a welcome message
-      run: echo "Code has been downloaded!"
+    
