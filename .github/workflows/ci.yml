@@ -34,5 +34,6 @@ jobs:
     - name: Run Tests
       run: dotnet test --no-build --configuration Release --verbosity normal
       
-      
+    - name: Publish 
+      run: dotnet publish CicdDotnetDemo.Api/CicdDotnetDemo.Api.csproj --no-build --configuration Release --output ./publish
     
