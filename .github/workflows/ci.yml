@@ -25,6 +25,14 @@ jobs:
     # - name: print dotnet version 
     #   run: dotnet --version
 
+    - name: Cache NuGet Packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+
     - name: Restore Dependencies
       run: dotnet restore
 
