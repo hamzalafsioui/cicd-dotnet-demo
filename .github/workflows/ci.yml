@@ -43,3 +43,10 @@ jobs:
         name: cicd-dotnet-demo-api
         path: ./publish
         retention-days: 7
+
+    - name: Test Secret Masking
+      env:
+        SUPER_SECRET: ${{ secrets.MY_SUPER_SECRET }}
+      run: |
+        echo "The secret is: $SUPER_SECRET"
+        echo "Notice how GitHub hides it!"
