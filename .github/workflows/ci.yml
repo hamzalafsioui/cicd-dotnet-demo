@@ -50,3 +50,27 @@ jobs:
       run: |
         echo "The secret is: $SUPER_SECRET"
         echo "Notice how GitHub hides it!"
+
+  deploy-to-staging:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    environment: Staging
+    
+    steps:
+    - name: Download Build Artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: cicd-dotnet-demo-api
+        path: ./publish
+
+    - name: Simulate Deployment
+      run: |
+        echo "Deploying to Staging Server..."
+        echo "Copying files from ./publish..."
+        # Here is where you would run real deployment commands (Azure, AWS, SSH, etc.)
+        echo "Deployment Successful!"
+
+    
+
+
+    
