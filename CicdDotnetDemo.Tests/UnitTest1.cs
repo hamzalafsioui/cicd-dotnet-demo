@@ -13,7 +13,7 @@ public class MathTests
         int result = a + b;
 
         // Assert
-        Assert.Equal(8, result);
+        Assert.Equal(99, result);
     }
 
     [Fact]
