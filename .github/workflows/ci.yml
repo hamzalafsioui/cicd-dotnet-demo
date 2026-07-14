@@ -63,6 +63,17 @@ jobs:
         echo "The secret is: $SUPER_SECRET"
         echo "Notice how GitHub hides it!"
 
+  build-docker-image:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Build Docker Image
+      run: docker build -t cicd-dotnet-demo:latest .
+
   deploy-to-staging:
     needs: build-and-test
     runs-on: ubuntu-latest
